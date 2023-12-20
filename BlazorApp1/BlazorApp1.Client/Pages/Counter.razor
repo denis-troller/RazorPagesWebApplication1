@@ -1,0 +1,41 @@
+﻿@page "/counter"
+@rendermode InteractiveAuto
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<table border="1">
+    <caption>Contact Information</caption>
+    <tr>
+        <td></td>
+        <th>Name</th>                                          <!-- Non-Compliant -->
+        <th>Phone#</th>                                        <!-- Non-Compliant -->
+        <th>City</th>                                          <!-- Non-Compliant -->
+    </tr>
+    <tr>
+        <td>1.</td>
+        <th>Joel Garner</th>                                   <!-- Non-Compliant -->
+        <td>412-212-5421</td>
+        <td>Pittsburgh</td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <th>Clive Lloyd</th>                                   <!-- Non-Compliant -->
+        <td>410-306-1420</td>
+        <td>Baltimore</td>
+    </tr>
+</table>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
